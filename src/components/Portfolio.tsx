@@ -120,7 +120,8 @@ const Portfolio = () => {
         >
           <p>
             © {new Date().getFullYear()} Syed Danish Ishaque. All rights
-            reserved.
+            reserved. Made with <span className="text-red-500">❤️</span> by
+            Danish
           </p>
         </motion.footer>
       </div>

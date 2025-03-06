@@ -198,6 +198,12 @@ const HeroSection = () => {
         <Button
           size="lg"
           className="relative overflow-hidden group bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 transition-all duration-500"
+          onClick={() =>
+            window.open(
+              "https://drive.google.com/file/d/15ZL1gQhz3NjHDGH4ASbB5oNX51w9NqC6/view?usp=sharing",
+              "_blank",
+            )
+          }
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20"
