@@ -1,15 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import EducationSection from "./EducationSection";
 import ProjectsSection from "./ProjectsSection";
 import ExperienceSection from "./ExperienceSection";
+import AvailabilitySection from "./AvailabilitySection";
 import Background3D from "./Background3D";
 import ThemeToggle from "./ThemeToggle";
 import ScrollToTop from "./ScrollToTop";
 
 const Portfolio = () => {
+  // Heart animation function
+  const animateHeart = useCallback(() => {
+    const heart = document.querySelector(".heart-animation");
+    if (heart) {
+      heart.classList.remove("animate-heart");
+      setTimeout(() => heart.classList.add("animate-heart"), 10);
+    }
+  }, []);
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const [scrollY, setScrollY] = useState(0);
 
@@ -110,6 +119,15 @@ const Portfolio = () => {
           >
             <ExperienceSection />
           </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={scrollY > 1200 ? "visible" : "hidden"}
+            custom={4}
+            variants={sectionVariants}
+          >
+            <AvailabilitySection />
+          </motion.div>
         </div>
 
         <motion.footer
@@ -119,8 +137,47 @@ const Portfolio = () => {
           className={`mt-16 mb-8 text-center text-sm ${isDarkTheme ? "text-gray-400" : "text-gray-600"}`}
         >
           <p>
-            © {new Date().getFullYear()} Syed Danish Ishaque. All rights
-            reserved.
+            © {new Date().getFullYear()} All rights reserved. Made with{" "}
+            <motion.span
+              className="text-red-500 inline-block cursor-pointer"
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                const heart = document.querySelector(".heart-animation");
+                if (heart) {
+                  heart.classList.remove("animate-heart");
+                  setTimeout(() => heart.classList.add("animate-heart"), 10);
+                }
+              }}
+            >
+              ❤️
+              <motion.div
+                className="heart-animation fixed inset-0 pointer-events-none flex items-center justify-center z-50"
+                initial={{ opacity: 0 }}
+              >
+                <motion.div
+                  className="text-9xl text-red-500 transform"
+                  variants={{
+                    animate: {
+                      scale: [1, 5, 1],
+                      opacity: [0, 1, 0],
+                      rotate: [0, 20, -20, 0],
+                    },
+                  }}
+                >
+                  ❤️
+                </motion.div>
+              </motion.div>
+            </motion.span>{" "}
+            by{" "}
+            <a
+              href="https://www.linkedin.com/in/techdanish/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              Danish
+            </a>
           </p>
         </motion.footer>
       </div>

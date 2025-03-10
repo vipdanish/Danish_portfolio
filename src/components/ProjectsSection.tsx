@@ -10,24 +10,24 @@ const ProjectsSection = () => {
       description:
         "Designed a personal portfolio with dark mode, animations, and projects showcase.",
       technologies: ["React.js", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/vipdanish/Danish_portfolio",
+      demo: "https://okdanish.netlify.app/",
     },
     {
       title: "Fruit Slice Game",
       description:
         "Interactive web-based game where players slice fruits as they appear on screen.",
       technologies: ["JavaScript", "HTML5", "CSS3"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/vipdanish/Fruit-Slice-Game",
+      demo: "https://vipdanish.github.io/Fruit-Slice-Game/",
     },
     {
-      title: "Command Line Interface Tool",
+      title: "90's CLI Portfolio",
       description:
-        "Developed a CLI tool to automate common development tasks and improve workflow efficiency.",
-      technologies: ["Python", "Shell Scripting", "Git"],
-      github: "https://github.com",
-      demo: null,
+        "Created a nostalgic 90's-style command-line interface portfolio with retro ASCII art, terminal animations, and interactive commands. Features custom shell emulation with classic DOS/Unix commands.",
+      technologies: ["JavaScript", "CSS", "Terminal UI", "ASCII Art"],
+      github: "https://github.com/vipdanish/danish_old_terminal",
+      demo: "https://danish-cli.netlify.app/",
     },
   ];
 

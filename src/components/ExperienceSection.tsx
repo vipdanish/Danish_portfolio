@@ -1,9 +1,19 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, ExternalLink } from "lucide-react";
 import SectionContainer from "./SectionContainer";
 import { motion } from "framer-motion";
 
 const ExperienceSection = () => {
   const experiences = [
+    {
+      position: "Freelance Web Developer",
+      company: "Upwork",
+      duration: "May 2023 - Present",
+      description:
+        "Working as a part-time freelancer on Upwork, delivering web development solutions to clients globally. Specialized in React.js, Node.js, and responsive design. Successfully completed multiple projects with positive client feedback. Managed project timelines independently while maintaining high-quality standards. Developed strong client communication skills and adapted to diverse project requirements.",
+      link: "https://www.upwork.com/freelancers/~014daf472f0b2ba1af?mp_source=share",
+      linkText: "View Upwork Profile",
+      linkIcon: "ExternalLink",
+    },
     {
       position: "Python Developer Intern",
       company: "CCA Pvt Ltd",
@@ -41,6 +51,16 @@ const ExperienceSection = () => {
               <span className="text-sm text-gray-400">{exp.duration}</span>
             </div>
             <p className="text-gray-300">{exp.description}</p>
+            {exp.link && (
+              <a
+                href={exp.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-2 text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                {exp.linkText} <ExternalLink className="ml-1 w-4 h-4" />
+              </a>
+            )}
           </motion.div>
         ))}
       </div>
