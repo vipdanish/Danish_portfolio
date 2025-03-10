@@ -24,7 +24,6 @@ const SectionContainer = ({ title, icon, children, value }: SectionProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="w-full max-w-3xl mx-auto mb-6"
-      whileHover={{ scale: 1.01 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -77,9 +77,11 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: "KoHo", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "KoHo", sans-serif;
   }
 }
 
@@ -213,6 +215,33 @@
 
 .animate-border-glow {
   animation: borderGlow 2s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(3) rotate(15deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(5) rotate(-15deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(3) rotate(15deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.animate-heart {
+  animation: heartBeat 1.5s ease-in-out forwards;
 }
 
 /* Hover effects */
